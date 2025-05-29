@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <title>One Mart Store</title>
+</head>
+
+
+
+<body>
+    <!-- navbar section start  -->
+    <!-- Overlay -->
+    <div class="show_mobile">
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+            </div>
+            <div class="icons">
+                <a href="#" class="cart-section-nav">
+                    <span class="pricees">£0.00</span>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <i class="hamburger fa-solid fa-bars" id="openMenu">
+                </i>
+            </div>
+        </nav>
+
+        <!-- Slide Menu -->
+        <div class="side-menu" id="sideMenu">
+            <span class="close-btn" id="closeMenu">×</span>
+            <ul>
+
+                <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Groceries</a></li>
+                <li><a href="#">Juice</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenu.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+            overlay.classList.add('show');
+        });
+
+        function closeSidebar() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+
+        closeMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+
+    <div id="header-placeholder"></div>
+    <!-- navbar section end  -->
+
+    <!-- hero section strat  -->
+    <div class="hero-section">
+        <div class="hero-section-left">
+            <img src="images/organic-products-hero.png" alt="hero-section-img">
+        </div>
+        <div class="hero-section-right">
+            <img src="images/logo-leaf-new.png" alt="hero-small-img">
+            <h5 class="heading-5">Best Quality Products</h5>
+            <h1 class="heading-1">Join The Organic <br class="displaynone"> Movement!</h1>
+            <p class="para1">Best Quality Products Join The Organic Movement! Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit.</p>
+            <button class="shop-btn"><i class="fa-solid fa-cart-arrow-down"></i>Shop Now</button>
+        </div>
+    </div>
+    <!-- hero section end  -->
+
+    <!-- feature-highlights_section start  -->
+    <div class="feature-highlights">
+        <div class="info-boxes">
+            <div class="service-icons"><i class="fa-solid fa-truck"></i></div>
+            <div class="highlight-strip"><a href="#">Free Shipping</a>
+                <p>Above $5 Only</p>
+            </div>
+        </div>
+        <div class="info-boxes">
+            <div class="service-icons"><i class="fa-regular fa-address-book"></i></div>
+            <div class="highlight-strip"><a href="#">Certified Organic</a>
+                <p>100% Guarantee</p>
+            </div>
+        </div>
+        <div class="info-boxes">
+            <div class="service-icons"><i class="fa-solid fa-money-bill"></i></div>
+            <div class="highlight-strip"><a href="#">Huge Savings</a>
+                <p>At Lowest Price</p>
+            </div>
+        </div>
+        <div class="info-boxes">
+            <div class="service-icons"><i class="fa-brands fa-mixer"></i></div>
+            <div class="highlight-strip"><a href="#">Easy Returns</a>
+                <p>No Questions Asked</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- feature-highlights_section end  -->
+
+
+    <!-- Best Selling Products start  -->
+    <div class="Best-Selling-Products-section">
+        <div class="Best-Selling-Products-outer">
+            <div class="Best-Selling-Products-outer-headings">
+                <h2 class="heding-2">Best Selling Products</h2>
+                <img src="images/logo-leaf-new.png" alt="">
+            </div>
+
+            <div class="Best-Selling-Products-lits">
+            </div>
+        </div>
+    </div>
+    <!-- Best Selling Products end  -->
+
+    <!-- shop by category section-->
+    <div class="shop-by-category">
+        <img class="tow-section-connect-img" src="images/basil-leaf.png" alt="">
+        <div class="spacediv"></div>
+        <div class="shop-by-category-lists">
+            <div class="shop-by-category-lists-item">
+                <h3>Farm Fresh Fruits</h3>
+                <p>Ut sollicitudin quam vel purus tempus, vel eleifend felis varius.</p>
+                <button class="shop-btn">Shop Now <i class="fa-solid fa-arrow-right show-now-btn"></i></button>
+            </div>
+            <div class="shop-by-category-lists-item">
+                <h3>Fresh Vegetables</h3>
+                <p>Aliquam porta justo nibh, id laoreet sapien sodales vitae justo.</p>
+                <button class="shop-btn">Shop Now <i class="fa-solid fa-arrow-right show-now-btn"></i></button>
+            </div>
+            <div class="shop-by-category-lists-item">
+                <h3>Organic Legume</h3>
+                <p>Phasellus sed urna mattis, viverra libero sed, aliquam est.</p>
+                <button class="shop-btn">Shop Now <i class="fa-solid fa-arrow-right show-now-btn"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- shop by category section end-->
+    <!--Get 25% section-->
+    <div class="Get-25p-section">
+        <div class="Get-25p-content">
+            <h2 class="heading-white">Get 25% Off On Your First Purchase!</h2>
+            <button class="shop-btn"><i class="fa-solid fa-cart-arrow-down"></i>Shop Now</button>
+        </div>
+    </div>
+    <div class="Registration-Needed">
+        <h3>Try It For Free. No Registration Needed.</h3>
+    </div>
+
+    <!-- Trending Products start -->
+    <div class="Best-Selling-Products-section">
+        <div class="Best-Selling-Products-outer">
+            <div class="Best-Selling-Products-outer-headings">
+                <h2 class="heding-2">Trending Products</h2>
+                <img src="images/logo-leaf-new.png" alt="">
+            </div>
+
+            <div class="Trading-Selling-Products-lits">
+            </div>
+        </div>
+    </div>
+    <!-- Trending Products end -->
+
+
+    <div class="Customers-reviews">
+        <div class="Customers-reviews-contant">
+            <h2 class="heding-2">Customers Reviews</h2>
+            <img style="padding-bottom: 30px;" src="images/logo-leaf-new.png" alt="">
+            <div class="Customers-reviews-box">
+                <div class="Customers-reviews-box-time">
+                    <div class="Customers-reviews-stare">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                    <div class="Customers-reviews-user-info">
+                        <img src="images/user-1.png" alt="user-img">
+                        <h6>Mila Kunis</h6>
+                    </div>
+                </div>
+                <div class="Customers-reviews-box-time Deal15p">
+                    <h3>Deal Of The Day 15% Off On All Vegetables!</h3>
+                    <p>I am text block. Click edit button to change this tex em ips.</p>
+                    <button class="shop-btn">Shop Now <i class="fa-solid fa-arrow-right show-now-btn"></i></button>
+                </div>
+                <div class="Customers-reviews-box-time">
+                    <div class="Customers-reviews-stare">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                    <div class="Customers-reviews-user-info">
+                        <img src="images/user-2.png" alt="user-img">
+                        <h6>Mike Sendler</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Customers-reviews-company">
+            <div class="Featured-Brands">
+                <h4>Featured Brands:</h4>
+            </div>
+            <div class="Featured-Brands-img">
+                <img src="images/c-1.svg" alt="">
+                <img src="images/c-2.svg" alt="">
+                <img src="images/c-3.svg" alt="">
+                <img src="images/c-4.svg" alt="">
+                <img src="images/c-5.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer section start  -->
+    <div id="footer-placeholder"></div>
+    <!-- footer section end -->
+    <script>
+        async function loadHeader() {
+            try {
+                const res = await fetch("header.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("header-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+
+        // Call the function
+        loadHeader();
+    </script>
+    <script>
+        async function loadFooter() {
+            try {
+                const res = await fetch("footer.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("footer-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+        // Call the function
+        loadFooter();
+    </script>
+    <!-- scrip files  -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

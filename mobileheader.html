@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar with Slide Menu</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 25px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            border: 1px solid black;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            background: #fffF;
+            color: black;
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            z-index: 1001;
+        }
+
+        .side-menu.open {
+            right: 0;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .side-menu ul li {
+            padding: 15px 0px;
+            border-bottom: 1px solid rgba(174, 173, 173, 0.596);
+        }
+
+        .side-menu ul li a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .fa-user-tie {
+            color: #2c2c2c !important;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #5e5e5e;
+            padding: 0px 10px;
+            border: 1px solid #7c7c7c;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hamburger {
+            background-color: #8bc34a;
+            color: rgba(255, 255, 255, 0.756);
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+        </div>
+        <div class="icons">
+            <a href="#" class="cart-section-nav">
+                <span class="pricees">£19.00</span>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </a>
+            <i class="hamburger fa-solid fa-bars" id="openMenu">
+            </i>
+        </div>
+    </nav>
+
+    <!-- Slide Menu -->
+    <div class="side-menu" id="sideMenu">
+        <span class="close-btn" id="closeMenu">×</span>
+        <ul>
+                
+            <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+            <li><a href="#">Everything</a></li>
+            <li><a href="#">Groceries</a></li>
+            <li><a href="#">Juice</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenu.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+            overlay.classList.add('show');
+        });
+
+        function closeSidebar() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+
+        closeMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+</head>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <div class="D-main">
+    <div class="D-main-outer">
+      <div class="D-main-outer-left-img">
+        <img id="detail-image" src="" alt="" width="300" />
+      </div>
+
+      <div class="D-main-outer-right-contant">
+        <h1 id="detail-title"></h1>
+        <p id="detail-price"></p>
+        <p id="detail-desc"></p>
+        <form action="" class="qty-f">
+          <input type="number" min="1" value="1" class="cart-counter">
+        <button class="shop-btn add-to-cart">ADD TO CART</button>
+        </form>
+      </div>
+    </div>
+    <div class="des-section-and-rewviese-section">
+      <div class="nav-links-d">
+        <ul>
+          <li id="dec-para">Description</li>
+          <li id="resid">Reviews (0)</li>
+        </ul>
+      </div>
+      <div class="des-section">
+        <p id="zzz"></p>
+      </div>
+      <div class="rewviese-section-outer">
+        <p class="para2">There are no reviews yet.</p> 
+      <div class="rewviese-section">
+      <span class="heading-3">Be the first to review “Assorted Coffee”</span>
+      <p class="para2">Your email address will not be published. Required fields are marked *</p>
+      <div class="Your-rating">
+        <p class="para3">Your rating *</p>
+        <div class="Your-rating-star">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+      </div>
+      <p class="para3">Your review *</p>
+      <form action="" class="Your-review-form">
+        <textarea></textarea>
+        <div class="name-email-box-outer">
+          <div class="name-email-box-innerer">
+            <label for="Name">Name *</label>
+            <input type="text">
+          </div>
+           <div class="name-email-box-innerer">
+            <label for="Email">Email*</label>
+            <input type="text">
+          </div>
+        </div>
+       <div class="checkbox-box"><input type="checkbox"><span> Save my name, email, and website in this browser for the next time I comment.</span></div>
+        <button class="shop-btn">SUBMIT</button>
+      </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function loadFooter() {
+      try {
+        const res = await fetch("footer.html");
+        if (!res.ok) throw new Error("Header not loaded");
+        const data = await res.text();
+        document.getElementById("footer-placeholder").innerHTML = data;
+      } catch (err) {
+        console.error("Error loading header:", err);
+      }
+    }
+
+    // Call the function
+    loadFooter();
+  </script>
+  <script>
+    async function loadHeader() {
+      try {
+        const res = await fetch("header.html");
+        if (!res.ok) throw new Error("Header not loaded");
+        const data = await res.text();
+        document.getElementById("header-placeholder").innerHTML = data;
+      } catch (err) {
+        console.error("Error loading header:", err);
+      }
+    }
+
+    // Call the function
+    loadHeader();
+  </script>
+  <!-- Load data first -->
+  <script src="data.js"></script>
+  <!-- Then load product details logic -->
+  <script src="product-details.js"></script>
+</body>
+
+</html>
