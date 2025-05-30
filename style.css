@@ -1008,11 +1008,12 @@ html {
     margin-bottom: var(--margin-8);
 }
 
-.product-card {
+.product-card p{
     font-size: var(--font-14);
     font-family: var(--font-merriweather);
     color: var(--color-1);
     font-weight: var(--font-weight-bold);
+    margin-top: var(--margin-8);
     margin-top: var(--margin-8);
 }
 
