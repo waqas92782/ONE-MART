@@ -69,6 +69,11 @@ function renderRelatedProducts(currentId) {
     relatedSection.innerHTML = relatedProducts.map(product => `
       <div class="product-card" data-id="${product.id}" style="cursor:pointer;">
         <img src="${product.img}" alt="${product.title}" />
+        <div class="Your-rating-star">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
         <h4>${product.title}</h4>
         <p>$${product.price.toFixed(2)}</p>
       </div>

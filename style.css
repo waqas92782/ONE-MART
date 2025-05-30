@@ -290,6 +290,13 @@ html {
 .Best-Selling-Products-lits-items-img img {
     width: var(--width-100p);
 }
+.Best-Selling-Products-lits-items .Your-rating-star{
+    padding: var(--padding-4);
+}
+
+.Best-Selling-Products-lits-items .Your-rating-star i{
+    font-size: var(--font-14) !important;
+}
 
 
 

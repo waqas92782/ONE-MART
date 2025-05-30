@@ -188,7 +188,8 @@
     }
 
     .Get-25p-content .heading-white {
-        font-size: 25px !important;
+        font-size: 20px !important;
+        text-align: center;
     }
 
     .Customers-reviews {
@@ -219,7 +220,7 @@
     }
 
     .Deal15p h3 {
-        font-size: 25px !important;
+        font-size: 20px !important;
     }
 
     .Deal15p p {
@@ -365,7 +366,7 @@
     }
 
     .Trading-Selling-Products-lits {
-        gap: 85px !important;
+        gap: 60px !important;
     }
 
     .Best-Selling-Products-outer {

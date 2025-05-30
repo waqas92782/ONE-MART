@@ -14,7 +14,13 @@ data.forEach(product => {
         </div>
         <span class="sub-title">Groceries</span>
         <a href="product-details.html?id=${product.id}" class="brand">${product.title}</a>
-        <span>stare</span>
+        <div class="Your-rating-star">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
         <span class="price">£${product.price.toFixed(2)}</span>
     `;
 
@@ -36,7 +42,13 @@ Treadingproducts.forEach((Tproduct, index) => {
         </div>
         <span class="sub-title">${spanText}</span>
         <a href="product-details.html?id=${Tproduct.id}" class="brand">${Tproduct.title}</a>
-        <span>stare</span>
+        <div class="Your-rating-star">
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
         <span class="price">£${Tproduct.price.toFixed(2)}</span>
     `;
 
