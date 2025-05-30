@@ -267,6 +267,16 @@
     .footer-section-contant-center {
         width: 50% !important;
     }
+
+    .D-main-outer {
+        flex-direction: column;
+        padding: 30px 15px !important;
+        gap: 30px;
+    }
+
+    .des-section-and-rewviese-section {
+        padding: 30px 15px !important;
+    }
 }
 
 
@@ -330,4 +340,8 @@
     .Best-Selling-Products-outer {
         padding: 30px 15px !important;
     }
+    .add-to-cart {
+        padding: 8px 30px !important;
+    }
+
 }

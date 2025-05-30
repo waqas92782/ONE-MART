@@ -2,13 +2,66 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 
 <body>
+   <div class="show_mobile">
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+            </div>
+            <div class="icons">
+                <a href="#" class="cart-section-nav">
+                    <span class="pricees">£0.00</span>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <i class="hamburger fa-solid fa-bars" id="openMenu">
+                </i>
+            </div>
+        </nav>
+
+        <!-- Slide Menu -->
+        <div class="side-menu" id="sideMenu">
+            <span class="close-btn" id="closeMenu">×</span>
+            <ul>
+
+                <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Groceries</a></li>
+                <li><a href="#">Juice</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenu.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+            overlay.classList.add('show');
+        });
+
+        function closeSidebar() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+
+        closeMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
   <div id="header-placeholder"></div>
 
   <div class="D-main">
