@@ -277,12 +277,32 @@
     .des-section-and-rewviese-section {
         padding: 30px 15px !important;
     }
+
+    .ralative-product-heading {
+        padding: 30px 15px !important;
+    }
+
+    .related-products-grid {
+        padding: 20px 15px !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app-play-store-section img {
+        width: 100px !important;
+    }
+
+    .ralative-product-heading h1 {
+        font-size: 20px !important;
+    }
 }
 
 
-@media screen and (max-width: 400px) {
 
-.footer-section-contant-right {
+
+@media screen and (max-width: 450px) {
+
+    .footer-section-contant-right {
         width: 100% !important;
         text-align: center !important;
         margin-top: 10px !important;
@@ -293,7 +313,8 @@
         text-align: center !important;
         margin-top: 10px !important;
     }
-    .displaynone2{
+
+    .displaynone2 {
         display: none !important;
     }
 
@@ -301,47 +322,83 @@
         margin-top: 0px !important;
         padding: 10px 0px !important;
     }
+
     .app-play-store-section {
         justify-content: center !important;
         gap: 10px !important;
     }
+
     .app-play-store-section img {
         width: 110px !important;
     }
-    .copy-right-contant{
+
+    .copy-right-contant {
         flex-direction: column !important;
         gap: 10px;
 
     }
-    .copy-right-contant-left{
+
+    .copy-right-contant-left {
         width: 100% !important;
         margin-bottom: 10px !important;
         text-align: center;
     }
+
     .hero-section-right .heading-5 {
         font-size: 15px !important;
     }
+
     .hero-section-right .heading-1 {
         font-size: 20px !important;
     }
 
-    .Best-Selling-Products-lits{
+    .Best-Selling-Products-lits {
         padding: 20px 15px !important;
     }
+
     .Best-Selling-Products-lits-items {
         width: 100% !important;
     }
-    .Registration-Needed h3{
-       font-size:  18px !important;
+
+    .Registration-Needed h3 {
+        font-size: 18px !important;
     }
+
     .Trading-Selling-Products-lits {
         gap: 85px !important;
     }
+
     .Best-Selling-Products-outer {
         padding: 30px 15px !important;
     }
+
     .add-to-cart {
         padding: 8px 30px !important;
+    }
+
+    .name-email-box-outer {
+        flex-direction: column;
+    }
+
+    .name-email-box-innerer {
+        width: 100% !important;
+    }
+
+    .checkbox-box {
+        align-items: flex-start;
+    }
+
+    .checkbox-box span {
+        font-size: 13px !important;
+    }
+
+    .nav-links-d ul {
+        flex-direction: column;
+        gap: 0px !important;
+    }
+
+    .product-card {
+        width: var(--width-100p) !important;
     }
 
 }
