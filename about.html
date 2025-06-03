@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+
+    <title>About-Our-Mart</title>
+
+</head>
+
+<body>
+    <div class="show_mobile">
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+            </div>
+            <div class="icons">
+                <a href="#" class="cart-section-nav">
+                    <span class="pricees">£0.00</span>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <i class="hamburger fa-solid fa-bars" id="openMenu">
+                </i>
+            </div>
+        </nav>
+
+        <!-- Slide Menu -->
+        <div class="side-menu" id="sideMenu">
+            <span class="close-btn" id="closeMenu">×</span>
+            <ul>
+
+                <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Groceries</a></li>
+                <li><a href="#">Juice</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenu.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+            overlay.classList.add('show');
+        });
+
+        function closeSidebar() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+
+        closeMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+    <!-- navbar start  -->
+    <div id="header-placeholder"></div>
+    <!-- navbar start end -->
+    <div class="about-section">
+        <h1>About Us</h1>
+    </div>
+
+    <div class="about-content-section">
+        <img class="tow-section-connect-img" src="images/basil-leaf.png" alt="">
+        <div class="spacediv"></div>
+        <div class="about-content">
+            <div class="about-content-left">
+                <h2 class="heding-2 about-mt">We Are Your Favourite Store.</h2>
+                <p>Tuas quisquam quo gravida proident harum, aptent ligula anim consequuntur, ultrices mauris, nunc
+                    voluptates lobortis, varius, potenti placeat! Fuga omnis. Cubilia congue. Recusandae. Vero penatibus
+                    quasi! Nostra tenetur dignissimos ultrices natus distinctio ultrices consequuntur numqu.</p> <br>
+                <p>Officiis fuga harum porro et? Similique rhoncus atque! Netus blanditiis provident nunc posuere. Rem
+                    sequi, commodo, lorem tellus elit, hic sem tenetur anim amet quas, malesuada proident platea
+                    corrupti expedita.</p>
+            </div>
+            <div class="about-content-right">
+                <img src="images/about-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="progree-section">
+        <div class="progree-contant">
+
+            <div class="progree-contant-itme">
+                <h4>Numbers Speak For Themselves!</h4>
+            </div>
+            <div class="progree-contant-itme">
+                <span class="counter-pro" data-start="4001" data-target="5000">4001</span><span>+</span>
+                <p>Curated Products</p>
+            </div>
+            <div class="progree-contant-itme">
+                <span class="counter-pro" data-start="0" data-target="800">0</span><span>+</span>
+                <p>Curated Products</p>
+            </div>
+            <div class="progree-contant-itme">
+                <span class="counter-pro" data-start="0" data-target="40">0</span><span>+</span>
+                <p>Product Categories</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="Certified-Products-section">
+        <div class="Certified-Products-contant">
+            <div class="Certified-Products-left">
+
+            </div>
+            <div class="Certified-Products-right"></div>
+        </div>
+    </div> -->
+    <!-- footer section here  -->
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadHeader() {
+            try {
+                const res = await fetch("header.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("header-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+
+        // Call the function
+        loadHeader();
+    </script>
+    <script>
+        async function loadFooter() {
+            try {
+                const res = await fetch("footer.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("footer-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+        // Call the function
+        loadFooter();
+
+
+
+    </script>
+    <script>
+        const counters = document.querySelectorAll('.counter-pro');
+
+        counters.forEach(counter => {
+            const start = +counter.getAttribute('data-start');
+            const target = +counter.getAttribute('data-target');
+            let count = start;
+            const increment = (target - start) / 100; // Adjust speed
+
+            const updateCount = () => {
+                count += increment;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+    </script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
