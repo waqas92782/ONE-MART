@@ -358,10 +358,45 @@
     .contant-main-section {
         padding-top: 50px !important;
     }
-    
-.faq-question {
-    font-size: 14px !important;
-}
+
+    .faq-question {
+        font-size: 14px !important;
+    }
+
+    .Certified-Products-left,
+    .Certified-Products-right {
+        width: 100%;
+    }
+
+    .Certified-Products-left {
+        padding: 20px 10px !important;
+    }
+
+    .slider-container {
+        position: inherit !important;
+        margin-bottom: 20px;
+        height: 100% !important;
+    }
+
+    .Certified-Products-0 {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .Certified-Products-d {
+        text-align: center;
+    }
+
+    .Certified-Products-d h2 {
+        font-size: 20px !important;
+    }
+
+    .Certified-Products-d-all {
+        justify-content: center;
+        gap: 10px !important;
+    }
+
 }
 
 
@@ -466,5 +501,19 @@
 
     .product-card {
         width: var(--width-100p) !important;
+    }
+
+    .Certified-Products-d-all {
+        flex-direction: column;
+    }
+
+    .Certified-Products-section {
+        padding: 0px !important;
+    }
+
+    .Certified-Products-d-all-items {
+        width: 100%;
+        max-width: 300px;
+        margin: 0px auto;
     }
 }
