@@ -110,15 +110,94 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="Certified-Products-section">
+    <div>
+    <div class="Certified-Products-section">
         <div class="Certified-Products-contant">
             <div class="Certified-Products-left">
+                <div class="slider-container">
+                    <div class="slider" id="slider">
+                        <img src="images/slide-1.jpg" alt="Slide 1">
+                        <img src="images/slide-2.jpg" alt="Slide 2">
+                        <img src="images/slide-3.jpg" alt="Slide 3">
+                        <img src="images/slide-4.jpg" alt="Slide 4">
+                    </div>
+                </div>
+                <script>
+                    const slider = document.getElementById("slider");
+                    const totalSlides = 4;
+                    let currentIndex = 0;
 
+                    function showNextSlide() {
+                        currentIndex++;
+
+                        if (currentIndex >= totalSlides) {
+                            slider.style.transition = "none";
+                            slider.style.transform = "translateX(0)";
+                            currentIndex = 0;
+
+                            setTimeout(() => {
+                                slider.style.transition = "transform 0.5s ease-in-out";
+                            }, 50);
+                        } else {
+                            slider.style.transform = `translateX(-${currentIndex * 470}px)`;
+                        }
+                    }
+
+                    setInterval(showNextSlide, 3000);
+                </script>
+                <div class="Customers-reviews-stare-about">
+                    <div class="Customers-reviews-stare">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p class="para1 txt-cent">Click edit button to change this text. Lorem ipsum dolor sit amet,
+                    consectetur
+                    adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+
+                <div class="about-client-section">
+                    <img src="images/user-1.png" alt="">
+                    <span>
+                        Mila Kunit</span>
+                </div>
             </div>
-            <div class="Certified-Products-right"></div>
+            <div class="Certified-Products-right">
+                <div class="Certified-Products-0">
+                    <img src="images/certifiedimg.png" alt="">
+                    <div class="Certified-Products--contant">
+                        <h2>Certified Products</h2>
+                        <p>All our products are certified for safety, reliability, and top-notch standards — because
+                            quality matters.</p>
+                    </div>
+                </div>
+                <div class="Certified-Products-d">
+                    <h2>We Deal With Various Quality Organic Products!</h2>
+                    <img src="images/logo-leaf-new.png" alt="hero-small-img">
+
+                    <div class="Certified-Products-d-all">
+                        <div class="Certified-Products-d-all-items">
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Dry fruits</span></small>
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Fresh vegetables</span></small>
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Dried vegetables</span></small>
+                        </div>
+                         <div class="Certified-Products-d-all-items">
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Milk products</span></small>
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Organic honey</span></small>
+                            <small><i class="fa-regular fa-circle-check"></i> <span>Organic tea</span></small>
+                        </div>
+                    </div>
+
+                    <div class="Certified-Products-b">
+                        <button class="shop-btn"><i class="fa-solid fa-cart-arrow-down"></i>START SHOPPING</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
+    </div>
     <!-- footer section here  -->
     <div id="footer-placeholder"></div>
     <script>
@@ -155,7 +234,6 @@
     </script>
     <script>
         const counters = document.querySelectorAll('.counter-pro');
-
         counters.forEach(counter => {
             const start = +counter.getAttribute('data-start');
             const target = +counter.getAttribute('data-target');

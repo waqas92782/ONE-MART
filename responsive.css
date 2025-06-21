@@ -137,6 +137,24 @@
         width: 100% !important;
     }
 
+    .Certified-Products-contant {
+        flex-direction: column !important;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box !important;
+        align-items: center;
+    }
+
+    .Certified-Products-right {
+        padding: 0px !important;
+        margin-top: 30px;
+    }
+
+    .contant-d-info {
+        padding: 20px !important;
+        gap: 20px !important;
+    }
+
 }
 
 
@@ -299,6 +317,10 @@
     .related-products-grid {
         padding: 20px 15px !important;
     }
+
+    .contant-d-item1 {
+        position: inherit !important;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -311,10 +333,35 @@
     }
 
     .progree-contant {
-    flex-direction: column;
-    gap: 40px;
+        flex-direction: column;
+        gap: 40px;
     }
 
+    .contant-d-info {
+        flex-direction: column;
+    }
+
+
+    .contant-d-info-box {
+        width: 100%;
+    }
+
+    .Frequently-Asked-Question {
+        padding: 30px 15px !important;
+    }
+
+    .Frequently-Asked-Question-d h2 {
+        font-size: 20px !important;
+        text-align: center;
+    }
+
+    .contant-main-section {
+        padding-top: 50px !important;
+    }
+    
+.faq-question {
+    font-size: 14px !important;
+}
 }
 
 
@@ -420,5 +467,4 @@
     .product-card {
         width: var(--width-100p) !important;
     }
-
 }

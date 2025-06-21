@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+
+    <title>Contant us</title>
+</head>
+
+<body>
+    <!-- navbar section -->
+    <div class="show_mobile">
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+            </div>
+            <div class="icons">
+                <a href="#" class="cart-section-nav">
+                    <span class="pricees">£0.00</span>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+                <i class="hamburger fa-solid fa-bars" id="openMenu">
+                </i>
+            </div>
+        </nav>
+
+        <!-- Slide Menu -->
+        <div class="side-menu" id="sideMenu">
+            <span class="close-btn" id="closeMenu">×</span>
+            <ul>
+
+                <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+                <li><a href="#">Everything</a></li>
+                <li><a href="#">Groceries</a></li>
+                <li><a href="#">Juice</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+
+        openMenu.addEventListener('click', () => {
+            sideMenu.classList.add('open');
+            overlay.classList.add('show');
+        });
+
+        function closeSidebar() {
+            sideMenu.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+
+        closeMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    </script>
+
+    <!-- header  -->
+    <div id="header-placeholder"></div>
+    <div class="contant-main-section">
+        <h1>Get in Touch</h1>
+    </div>
+
+    <div class="contant-d-all">
+        <div class="contant-d-item1">
+            <img src="images/basil-leaf.png" alt="">
+            <div class="contant-d-info">
+                <div class="contant-d-info-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>03143303744</span>
+                    <span>03273420865</span>
+                </div>
+                <div class="contant-d-info-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>ws4722320@gmail.com</span>
+                    <span>ws4722320@gmail.com</span>
+                </div>
+                <div class="contant-d-info-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Lahore Pakistan</span>
+                    <span>Islamabad Pakistan</span>
+                </div>
+            </div>
+        </div>
+        <div class="Frequently-Asked-Question">
+            <div class="Frequently-Asked-Question-d">
+                <h2>Frequently-Asked-Question</h2>
+                <img src="images/logo-leaf-new.png" alt="hero-small-img">
+                <div class="Frequently-Asked-Question-dddd">
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p> What payment methods do you accept?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept Visa, MasterCard, PayPal, and Cash on Delivery (COD). All transactions are secure and encrypted.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p> How long does shipping take?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Orders are usually processed within 1–2 business days and delivered within 3–7 business days, depending on your location.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p>Can I return or exchange an item?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer a 7-day return and exchange policy. Items must be unused and in original packaging. Visit our Return Policy page for details.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p> How can I track my order?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once your order is shipped, we’ll send you a tracking number via email or SMS. You can also track your order through the “My Orders” section on our website.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p>Do you offer international shipping?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Currently, we only ship within Pakistan. However, we are working to add international shipping very soon!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-box">
+                        <div class="faq-question">
+                            <p>Is my personal information secure on your website?</p>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our website uses SSL encryption and follows strict privacy protocols to protect your personal data and payment information.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const faqs = document.querySelectorAll('.faq-box');
+
+        faqs.forEach(faq => {
+            const question = faq.querySelector('.faq-question');
+            const icon = faq.querySelector('.faq-icon');
+
+            question.addEventListener('click', () => {
+                faq.classList.toggle('active');
+                icon.classList.toggle('rotate');
+            });
+        });
+    </script>
+
+
+    <script>
+        async function loadHeader() {
+            try {
+                const res = await fetch("header.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("header-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+
+        // Call the function
+        loadHeader();
+    </script>
+    <!-- footer section here  -->
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadFooter() {
+            try {
+                const res = await fetch("footer.html");
+                if (!res.ok) throw new Error("Header not loaded");
+                const data = await res.text();
+                document.getElementById("footer-placeholder").innerHTML = data;
+            } catch (err) {
+                console.error("Error loading header:", err);
+            }
+        }
+        // Call the function
+        loadFooter();
+    </script>
+</body>
+
+</html>
