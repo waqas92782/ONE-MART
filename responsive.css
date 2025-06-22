@@ -154,7 +154,9 @@
         padding: 20px !important;
         gap: 20px !important;
     }
-
+.car-section {
+    padding: 20px 9px !important;
+}
 }
 
 
@@ -515,5 +517,24 @@
         width: 100%;
         max-width: 300px;
         margin: 0px auto;
+    }
+
+    .prduct-name {
+        font-size: 14px !important;
+    }
+
+    .qty-input {
+        width: 35px !important;
+    }
+   
+    .cart-maintd button i {
+        font-size: 14px !important;
+    }
+    .cart-maintd {
+        gap: 10px !important;
+    }
+
+    .headind-section-cart th {
+        font-size: 14px !important;
     }
 }

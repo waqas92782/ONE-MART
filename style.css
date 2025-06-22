@@ -1356,7 +1356,8 @@ html {
     flex-direction: column;
     gap: 30px;
 }
-.Frequently-Asked-Question-dddd{
+
+.Frequently-Asked-Question-dddd {
     width: 100%;
 }
 
@@ -1395,8 +1396,9 @@ html {
 .faq-icon.rotate {
     transform: rotate(180deg);
 }
+
 .faq-box.active .faq-question {
-  background-color: var(--color-2);
+    background-color: var(--color-2);
 }
 
 .faq-answer {
@@ -1412,4 +1414,77 @@ html {
 .faq-box.active .faq-answer {
     max-height: 200px;
     padding: 15px;
+}
+
+/* cart-section  */
+
+
+.car-section {
+    width: var(--width-100p);
+    padding-top: var(--padding-40);
+    padding-bottom: var(--padding-40);
+    background-color: var(--bgcolor-1);
+}
+
+.cart-section-d {
+    width: var(--width-100p);
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.car-heading {
+    font-size: var(--font-30);
+    padding-bottom: var(--padding-10);
+    font-family: var(--font-merriweather);
+    color: var(colo);
+}
+
+.headind-section-cart {
+    border: 1px solid #abaaaa;
+    background-color: white;
+}
+
+.headind-section-cart th {
+    font-size: var(--font-17);
+    font-family: var(--font-open-sans);
+
+}
+
+#cartTableBody {
+    border: 1px solid #d0d0d0;
+}
+
+.cart-maintd {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-maintd button {
+    border: none !important;
+    outline: none;
+    cursor: pointer;
+}
+
+.cart-maintd button i {
+    font-size: var(--font-17);
+    color: #8c8c8c;
+}
+.cart-maintd button i:hover{
+    color: #8bc34a;
+}
+.prduct-name{
+    font-size: var(--font-18);
+    font-family: var(--font-merriweather);
+    color: var(--color-2);
+}
+
+.fff30{
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.qty-input{
+    width: 50px;
+    height: 30px;
+    text-align: center;
 }

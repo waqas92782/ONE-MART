@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+  <title>Cart Page</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+    }
+
+    img {
+      width: 70px;
+    }
+
+    
+@media screen and (max-width: 450px) {
+    th,
+    td {
+      padding: 5px !important;
+      white-space: nowrap;
+    }
+     img {
+      width: 35px !important;
+     }
+}
+  </style>
+</head>
+
+<body>
+  <div class="show_mobile">
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="images/organic-store-logo5.svg" alt="logo"></a>
+      </div>
+      <div class="icons">
+        <a href="#" class="cart-section-nav">
+          <span class="pricees">£0.00</span>
+          <i class="fa-solid fa-basket-shopping"></i>
+        </a>
+        <i class="hamburger fa-solid fa-bars" id="openMenu">
+        </i>
+      </div>
+    </nav>
+
+    <!-- Slide Menu -->
+    <div class="side-menu" id="sideMenu">
+      <span class="close-btn" id="closeMenu">×</span>
+      <ul>
+        <a href="#"><i class="fa-solid fa-user-tie"></i></a>
+        <li><a href="#">Everything</a></li>
+        <li><a href="#">Groceries</a></li>
+        <li><a href="#">Juice</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    openMenu.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+      overlay.classList.add('show');
+    });
+
+    function closeSidebar() {
+      sideMenu.classList.remove('open');
+      overlay.classList.remove('show');
+    }
+
+    closeMenu.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+  </script>
+  <div id="header-placeholder"></div>
+  <div class="car-section">
+    <div class="cart-section-d">
+      <h2 class="car-heading">Cart</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr class="headind-section-cart">
+              <th></th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+            <!-- Items will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function loadFooter() {
+      try {
+        const res = await fetch("footer.html");
+        if (!res.ok) throw new Error("Header not loaded");
+        const data = await res.text();
+        document.getElementById("footer-placeholder").innerHTML = data;
+      } catch (err) {
+        console.error("Error loading header:", err);
+      }
+    }
+
+    // Call the function
+    loadFooter();
+  </script>
+  <script>
+    async function loadHeader() {
+      try {
+        const res = await fetch("header.html");
+        if (!res.ok) throw new Error("Header not loaded");
+        const data = await res.text();
+        document.getElementById("header-placeholder").innerHTML = data;
+      } catch (err) {
+        console.error("Error loading header:", err);
+      }
+    }
+
+    // Call the function
+    loadHeader();
+  </script>
+  <!-- Add this script before closing body -->
+  <script>
+    window.onload = function () {
+      function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const tbody = document.getElementById('cartTableBody');
+        tbody.innerHTML = '';
+
+        if (cart.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6">Your cart is empty</td></tr>';
+          return;
+        }
+
+        cart.forEach(item => {
+          const price = parseFloat(item.price) || 0;
+          const qty = parseInt(item.qty) || 1;
+          const total = price * qty;
+
+          const tr = document.createElement('tr');
+          tr.className = "fff30";
+          tr.innerHTML = `
+            <td class="cart-maintd"><button onclick="removeItem(${item.id})"><i class="fa-regular fa-circle-xmark"></i></button><img src="${item.image}" /></td>
+            <td class="prduct-name">${item.title}</td>
+            <td>£${price.toFixed(2)}</td>
+            <td>
+              <input type="number" value="${qty}" min="1" data-id="${item.id}" class="qty-input"" />
+            </td>
+            <td class="item-total">£${total.toFixed(2)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        // Handle quantity change
+        document.querySelectorAll('.qty-input').forEach(input => {
+          input.addEventListener('change', function () {
+            const newQty = parseInt(this.value);
+            const itemId = parseInt(this.dataset.id);
+
+            if (newQty < 1) {
+              this.value = 1;
+              return;
+            }
+
+            updateQty(itemId, newQty);
+          });
+        });
+      }
+
+      function updateQty(id, newQty) {
+        let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const item = cart.find(p => p.id === id);
+        if (item) {
+          item.qty = newQty;
+          item.total = item.price * newQty;
+          localStorage.setItem('cartItems', JSON.stringify(cart));
+          renderCart();
+        }
+      }
+
+      window.removeItem = function (id) {
+        let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cart = cart.filter(item => item.id !== id);
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        renderCart();
+      }
+
+      renderCart();
+    };
+  </script>
+
+</body>
+
+</html>
