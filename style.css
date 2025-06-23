@@ -31,7 +31,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding-15);
+    padding: var(--padding-10);
+    max-width: 1200px;
+    margin: 0px auto;
 }
 
 .navbar-container-left-box {
@@ -1470,26 +1472,28 @@ html {
     font-size: var(--font-17);
     color: #8c8c8c;
 }
-.cart-maintd button i:hover{
+
+.cart-maintd button i:hover {
     color: #8bc34a;
 }
-.prduct-name{
+
+.prduct-name {
     font-size: var(--font-18);
     font-family: var(--font-merriweather);
     color: var(--color-2);
 }
 
-.fff30{
+.fff30 {
     border-bottom: 1px solid #d0d0d0;
 }
 
-.qty-input{
+.qty-input {
     width: 50px;
     height: 30px;
     text-align: center;
 }
 
-.gotoshoping{
+.gotoshoping {
     padding: 10px;
     background-color: #8bc34a;
     color: var(--color-1);
@@ -1499,7 +1503,7 @@ html {
     margin-left: 10px;
 }
 
-#cart-count{
+#cart-count {
     background-color: #000000;
     color: white;
     font-size: 10px;
@@ -1508,4 +1512,41 @@ html {
     position: relative;
     top: -22px;
     right: 10px;
+}
+
+
+.Everything-section {
+    width: var(--width-100p);
+    background-color: var(--bgcolor-1);
+    padding-top: var(--padding-40);
+    padding-bottom: var(--padding-40);
+}
+
+.Everything-section-main {
+    width: var(--width-100p);
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.links-section a,
+.links-section span {
+    font-size: var(--font-16);
+    color: #808285;
+    font-family: var(--font-open-sans);
+}
+.links-section h2{
+    font-size: var(--font-30);
+    font-family: var(--font-merriweather);
+    color: #8bc34a;
+    margin-top: 30px;
+}
+
+
+.paddingnone{
+    padding-top: 40px !important;
+}
+
+
+.shop-btn a{
+    color: white !important;
 }

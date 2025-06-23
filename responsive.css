@@ -154,9 +154,13 @@
         padding: 20px !important;
         gap: 20px !important;
     }
-.car-section {
-    padding: 20px 9px !important;
-}
+
+    .car-section {
+        padding: 20px 9px !important;
+    }
+    .Everything-section {
+        padding: 30px 15px !important;
+    }
 }
 
 
@@ -526,10 +530,11 @@
     .qty-input {
         width: 30px !important;
     }
-   
+
     .cart-maintd button i {
         font-size: 12px !important;
     }
+
     .cart-maintd {
         gap: 7px !important;
     }
@@ -541,4 +546,6 @@
     .qty-input {
         height: 25px;
     }
+
+
 }

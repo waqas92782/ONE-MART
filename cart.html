@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+  <link rel="shortcut icon" href="images/icons8-shop-50.png" type="image/x-icon">
   <title>Cart Page</title>
   <style>
     table {
@@ -156,7 +157,7 @@
       tbody.innerHTML = '';
 
       if (cart.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6">Your cart is empty <a class="gotoshoping" href="index.html">GO TO SHOPPING</a></td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6">Your cart is empty <a class="gotoshoping" href="shop.html">GO TO SHOPPING</a></td></tr>';
         updateCartCount();
         return;
       }
