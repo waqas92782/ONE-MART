@@ -21,21 +21,24 @@
       text-align: center;
     }
 
-    img {
+    .car-item-image{
       width: 70px;
     }
 
-    
-@media screen and (max-width: 450px) {
-    th,
-    td {
-      padding: 5px !important;
-      white-space: nowrap;
+
+    @media screen and (max-width: 450px) {
+
+      th,
+      td {
+        padding: 3px !important;
+        white-space: nowrap;
+      }
+
+      .car-item-image{
+        width: 35px !important;
+      }
+      
     }
-     img {
-      width: 35px !important;
-     }
-}
   </style>
 </head>
 
@@ -145,74 +148,93 @@
     loadHeader();
   </script>
   <!-- Add this script before closing body -->
-  <script>
-    window.onload = function () {
-      function renderCart() {
-        const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const tbody = document.getElementById('cartTableBody');
-        tbody.innerHTML = '';
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const tbody = document.getElementById('cartTableBody');
+      tbody.innerHTML = '';
 
-        if (cart.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="6">Your cart is empty</td></tr>';
-          return;
-        }
-
-        cart.forEach(item => {
-          const price = parseFloat(item.price) || 0;
-          const qty = parseInt(item.qty) || 1;
-          const total = price * qty;
-
-          const tr = document.createElement('tr');
-          tr.className = "fff30";
-          tr.innerHTML = `
-            <td class="cart-maintd"><button onclick="removeItem(${item.id})"><i class="fa-regular fa-circle-xmark"></i></button><img src="${item.image}" /></td>
-            <td class="prduct-name">${item.title}</td>
-            <td>£${price.toFixed(2)}</td>
-            <td>
-              <input type="number" value="${qty}" min="1" data-id="${item.id}" class="qty-input"" />
-            </td>
-            <td class="item-total">£${total.toFixed(2)}</td>
-          `;
-          tbody.appendChild(tr);
-        });
-
-        // Handle quantity change
-        document.querySelectorAll('.qty-input').forEach(input => {
-          input.addEventListener('change', function () {
-            const newQty = parseInt(this.value);
-            const itemId = parseInt(this.dataset.id);
-
-            if (newQty < 1) {
-              this.value = 1;
-              return;
-            }
-
-            updateQty(itemId, newQty);
-          });
-        });
+      if (cart.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6">Your cart is empty <a class="gotoshoping" href="index.html">GO TO SHOPPING</a></td></tr>';
+        updateCartCount();
+        return;
       }
 
-      function updateQty(id, newQty) {
-        let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const item = cart.find(p => p.id === id);
-        if (item) {
-          item.qty = newQty;
-          item.total = item.price * newQty;
-          localStorage.setItem('cartItems', JSON.stringify(cart));
-          renderCart();
-        }
-      }
+      cart.forEach(item => {
+        const price = parseFloat(item.price) || 0;
+        const qty = parseInt(item.qty) || 1;
+        const total = price * qty;
 
-      window.removeItem = function (id) {
-        let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
-        cart = cart.filter(item => item.id !== id);
+        const tr = document.createElement('tr');
+        tr.className = "fff30";
+        tr.innerHTML = `
+          <td class="cart-maintd">
+            <button class="remove-btn" data-id="${item.id}">
+              <i class="fa-regular fa-circle-xmark"></i>
+            </button>
+            <img class="car-item-image" src="${item.image}" />
+          </td>
+          <td class="prduct-name">${item.title}</td>
+          <td>£${price.toFixed(2)}</td>
+          <td>
+            <input type="number" value="${qty}" min="1" data-id="${item.id}" class="qty-input" />
+          </td>
+          <td class="item-total">£${total.toFixed(2)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // ✅ Handle Quantity Change
+      document.querySelectorAll('.qty-input').forEach(input => {
+        input.addEventListener('change', function () {
+          const newQty = parseInt(this.value);
+          const itemId = parseInt(this.dataset.id);
+          if (newQty < 1) {
+            this.value = 1;
+            return;
+          }
+          updateQty(itemId, newQty);
+        });
+      });
+
+      // ✅ Handle Remove Item
+      document.querySelectorAll('.remove-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const itemId = parseInt(this.dataset.id);
+          removeItem(itemId);
+        });
+      });
+
+      updateCartCount(); // ✅ Always update after render
+    }
+
+    // ✅ Update Quantity
+    function updateQty(id, newQty) {
+      let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const item = cart.find(p => p.id === id);
+      if (item) {
+        item.qty = newQty;
+        item.total = item.price * newQty;
         localStorage.setItem('cartItems', JSON.stringify(cart));
         renderCart();
       }
+    }
 
-      renderCart();
-    };
-  </script>
+    // ✅ Remove Item
+    window.removeItem = function (id) {
+      let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      renderCart(); // Counter bhi update ho jayega
+    }
+
+    // ✅ Initial Load
+    renderCart();
+    updateCartCount();
+  });
+</script>
+
 
 </body>
 

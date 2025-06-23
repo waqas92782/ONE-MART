@@ -520,21 +520,25 @@
     }
 
     .prduct-name {
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
 
     .qty-input {
-        width: 35px !important;
+        width: 30px !important;
     }
    
     .cart-maintd button i {
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .cart-maintd {
-        gap: 10px !important;
+        gap: 7px !important;
     }
 
     .headind-section-cart th {
-        font-size: 14px !important;
+        font-size: 13px !important;
+    }
+
+    .qty-input {
+        height: 25px;
     }
 }

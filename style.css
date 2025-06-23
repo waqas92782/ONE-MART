@@ -1488,3 +1488,24 @@ html {
     height: 30px;
     text-align: center;
 }
+
+.gotoshoping{
+    padding: 10px;
+    background-color: #8bc34a;
+    color: var(--color-1);
+    font-size: var(--font-15);
+    border-radius: 5px;
+    font-family: var(--font-merriweather);
+    margin-left: 10px;
+}
+
+#cart-count{
+    background-color: #000000;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    position: relative;
+    top: -22px;
+    right: 10px;
+}
